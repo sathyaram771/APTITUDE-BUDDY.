@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>BASIC MATH OPERATIONS</title>
+		<link rel="stylesheet".href="https://pyscript.net/alpha/pyscript.css"./>
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+	</head>
+	<body>
+		<div style="background-image:url('space.jpeg');height: 90px;">
+		<h1 style="color: whitesmoke;">BASIC MATH CALCULATIONS</h1>
+		<form action="index.html">
+			<input id="homebutton" style="background-image:url('space.jpeg');color: whitesmoke;font-size: 23px;" type="submit" value="HOME">
+		</form>
+		<form action = "content.html">
+			<input id="contentbutton" style="background-image:url('space.jpeg');color:whitesmoke;font-size: 23px;" type="submit" value="CONTENT">
+		</form>
+		</div>
+		<div id = "root" style="background-color: orange;">
+		<h2>ROOT OPERATON</h2>
+		<form onsubmit="return false">
+			<label for="number1">ENTER THE NUMBER</label><br>
+			<input type="number" id="number1" name="number1" value="number1"/><br>
+			<label for="number2">ENTER THE ROOT</label><br>
+			<input type="number" id="number2" name="number2" value="number2"/><br>
+			<input pys-onClick="sub1" type="submit" id="btn-form1" value="submit">
+		</form>
+		<p>OUTPUT:</p>
+		<p id='outputtext1' style="color:white;"></p>
+		<P id='output1' style="color: white;"></P>
+		<div style="border: 7px solid black;">
+		<p id="questiontext1"></p>
+		<button id="questionb1" onclick="disable1();question1()">CLICK TO VIEW QUESTION</button>
+		<form onsubmit="return false">
+			<input type="number" id="answer1" name="answer1" value="answer1"/>
+			<input pys-onClick="sub11" onclick="undisable1()" type="submit" id="btnform11" value="submit"/>
+		</form>
+		<p id="answertext1"></p>
+		</div>
+		<py-script>
+			def sub1(*args,**kwargs):
+				import math
+				result1 = Element('output1')
+				textresult1 = Element('outputtext1')
+				textresult1.write("THE ANSWER IS:")
+				A = Element('number1').value
+				B = Element('number2').value
+				result1.write(int(A)**(1/int(B)))
+			def sub11(*args,**kwargs):
+				O = Element("answer1").value
+				P = Element("answertext1")
+				if int(O)==73:
+					P.write("CORRECT ANSWER")
+				else:
+					P.write("THE ANSWER IS WRONG,THE CORRECT ANSWER IS 73")
+				
+
+		</py-script>
+		<script>
+			function disable1(){
+				document.getElementById("btn-form1").disabled = true;
+			}
+			function undisable1(){
+				document.getElementById("btn-form1").disabled = false;
+			}
+			function question1(){
+				document.getElementById('questiontext1').innerHTML="WHAT IS ROOT OF 5329?"
+			}
+		</script>
+		<style>
+			#root{
+				position: absolute;
+				top:200px; right:100px;
+				font-size: 23px;
+				color: darkblue;
+				border: 7px solid black;
+				width:45%;
+			}
+			#homebutton{
+				position: absolute;
+				top: 80px ;left:10px ;
+			}
+			#contentbutton{
+				position: absolute;
+				top:80px ;left: 100px;
+			}
+			
+		</style>
+		</div>
+		<div id="fact" style="background-color:lightblue;">
+			<h2>FACTORIAL CALCULATION</h2>
+			<form onsubmit="return false">
+				<label for="number3">ENTER THE NUMBER:</label><br>
+				<input type="number" id="number3" name="number3" value="number3"/><br>
+				<input pys-onClick="sub2" type="submit" id="btn-form2" value="submit">
+			</form>
+			<p>OUTPUT</p>
+			<p id="outputtext2"></p>
+			<p id='output2'></p>
+			<p id='exception2'></p>
+			<div style="border: 7px solid black">
+			<p id="questiontext2"></p>
+			<button id="questionb2" onclick="disable2();question2()">CLICK TO VIEW QUESTION</button>
+			<form onsubmit="return false">
+				<input type="number" id="answer2" name="answer2" value="answer2"/>
+				<input pys-onClick="sub21" onclick="undisable2()" type="submit" id="btnform21" value="submit">
+
+			</form>
+			<p id="answertext2"></p>
+			</div>
+			<py-script>
+				def sub2(*args,**kwargs):
+					G = Element('number3').value
+					if(int(G)>=0):
+						import math
+						result2 = Element('output2')
+						textresult2 = Element('outputtext2')
+						textresult2.write("THE ANSWER IS:")
+						result2.write(math.factorial(int(G)))
+					else:
+						result2 = Element('output2')
+						result2.write("")
+						textexcep2 = Element('outputtext2')
+						textexcep2.write("NEGATIVE NUMBERS NOT ALLOWED")
+				def sub21(*args,**kwargs):
+					Q = Element("answer2").value
+					R = Element("answertext2")
+					if int(Q)==362880:
+						R.write("CORRECT ANSWER")
+					else:
+						R.write("THE ANSWER IS WRONG,THE CORRECT ANSWER IS 362880")
+						
+			</py-script>
+			<script>
+				function disable2(){
+					document.getElementById("btn-form2").disabled = true;
+				}
+				function undisable2(){
+					document.getElementById("btn-form2").disabled = false;
+				}
+				function question2(){
+					document.getElementById('questiontext2').innerHTML="WHAT IS 10 FACTORAIL?"
+				}
+			</script>
+			<style>
+				#fact{
+					position: absolute;
+					top:200px; left:0px;
+					font-size: 23px;
+					color: brown;
+					border:7px solid black;
+					width: 45%;
+					
+				}
+				
+				
+			</style>
+		</div>
+		<div id="trignomentry" style="background-color:silver;">
+			<h2>TRIGNOMENTRIC FUNCTIONS</h2>
+			<form onsubmit="return false">
+				<label for="function">FUNCTION NAME:</label><br>
+				<input type="text" id="function" name="function" value="FUNCTION?"><br>
+				<label for="number">ENTER ANGLE IN DEGREES:</label><br>
+				<input type="number" id="number4" name="number4" value="number4" step="0.001" /><br>
+ 
+
+				<input pys-onClick="sub3" type="submit" id="btn-form3" value="submit">
+			</form>
+			<p>OUTPUT:<p>
+			<p id='outputtext3'></p>
+			<p id='output3'></p>
+			<py-script>
+				def sub3(*args,**kwargs):
+					import math
+					a = Element('function').value
+					b = Element('number4').value
+					c = math.radians(float(b))
+					result3 = Element('output3')
+					if a=="sin":
+						result3.write(math.sin(c))
+					elif a=="cos":
+						result3.write(math.cos(c))
+					elif a=="sec":
+						result3.write(1-(math.tan(c)**2))
+					elif a=="cosec":
+						result3.write(1/math.cosec(c))
+					elif a=="tan":
+						result3.write(math.tan(c))
+					elif a=="cot":
+						result3.write(math.cos(c)/math.sin(c))
+
+			</py-script>
+			<style>
+				#trignomentry{
+					position: absolute;
+					font-size: 23px;
+					top: 775px; left: 350px;
+					color: yellow;
+					border:7px solid black;
+					width: 50%;
+					background-image: url('step.jpeg');
+					background-repeat: no-repeat;
+  					background-size: cover;
+
+				}
+			</style>
+
+		</div>
+		<div id="hcf" style="background-color: silver;">
+			<h2>HIGHEST COMMON FACTOR</h2>
+			<form onsubmit="return false">
+				<label for="number5">ENTER NUMBER1</label><br>
+				<input type="number" id="number5" name="number5" value="number5"/><br>
+				<lable for="number6">ENTER NUMBER2</lable><br>
+				<input type="number" id="number6" name="number6" value="number6"/><br>
+				<input pys-onClick="sub4" type="submit" id="btn-form4" value="submit">
+
+			</form>
+			<p>OUTPUT:</p>
+			<p id="outputtext4"></p>
+			<p id="output4"></p>
+			<div style="border: 7px solid black;">
+			<p id="questiontext4"></p>
+			<button id="questionb4" onclick="disable4();question4()">CLICK TO VIEW QUESTION</button>
+			<form onsubmit="return false">
+				<input type="number" id="answer4" name="answer4" value="answer4"/>
+				<input pys-onClick="sub41" onclick="undisable4()" type="submit" id="btnform41" value="submit">
+	        </form>
+			<p id="answertext4"></p>
+			</div>
+			<py-script>
+				def sub4(*args,**kwargs):
+					import math
+					result4 = Element('output4')
+					textresult4 = Element('outputtext4')
+					textresult4.write("THE ANSWER IS:")
+					I = Element('number5').value
+					J = Element('number6').value
+					result4.write(math.gcd(int(I),int(J)))
+				def sub41(*args,**kwargs):
+					S = Element('answer4').value
+					T = Element('answertext4')
+					if int(S)==45:
+						T.write("CORRECT ANSWER!")
+					else:
+						T.write("WRONG ANSWER CORRECT ANSWER IS 45!")
+			</py-script>
+			<script>
+				function disable4(){
+					document.getElementById('btn-form4').disabled = true;
+				}
+				function undisable4(){
+					document.getElementById('btn-form4').disabled = false;
+				}
+				function question4(){
+					document.getElementById('questiontext4').innerHTML = "WHAT IS THE HCF OF 135 AND 225?"
+				}
+			</script>
+			<style>
+				#hcf{
+					position: absolute;
+					top: 1200px; left: 0px;
+					border: 7px solid black;
+					font-size: 23px;
+					width: 45%;
+				}
+			</style>
+		</div>
+		<div id="lcm" style="background-color: darkgray;" >
+			<h2>LOWEST COMMON MULTIPLE</h2>
+			<form onsubmit="return false">
+				<label for="number7">ENTER NUMBER1</label><br>
+				<input type="number" id="number7" name="number7" value="number7"/><br>
+				<label for="number8">ENTER NUMBER2</lable><br>
+				<input type="number" id="number8" name="number8" value="number8"/><br>
+				<input pys-onClick="sub5" type="submit" id="btn-form5" value="submit">
+
+			</form>
+			<p>OUTPUT:</p>
+			<p id="outputtext5"></p>
+			<p id="output5"></p>
+			<div style="border:7px solid black;">
+			<p id="questiontext5"></p>
+			<button id="questionb5" onclick="disable5();question5()">CLICK TO VIEW QUESTION</button>
+			<form onsubmit="return false">
+				<input type="number" id="answer5" name="answer5" value="answer5"/>
+				<input pys-onClick = "sub51" onclick="undisable5()" type="submit" id="btnform51" value="submit">
+
+ 		    </form>
+			<p id="answertext5"></p>
+			</div>
+			<py-script>
+				def sub5(*args,**kwargs):
+					import math
+					result5=Element('output5')
+					textresult5=Element('outputtext5')
+					textresult5.write("THE ANSWER IS:")
+					K = Element('number7').value
+					L = Element('number8').value
+					M = int(K)*int(L)
+					N = math.gcd(int(K),int(L))
+					result5.write(int(M/N))
+				def sub51(*args,**kwargs):
+					U = Element('answer5').value
+					V = Element('answertext5')
+					if int(U) == 855:
+						V.write("CORRECT ANSWER!")
+					else:
+						V.write("WRONG ANSWER, CORRECT ANSWER IS 855!")
+			</py-script>
+			<script>
+				function disable5(){
+					document.getElementById('btn-form5').disabled = true;
+				}
+				function undisable5(){
+					docuemnt.getElementById('btn-form5').disabled = false;
+				}
+				function question5(){
+					document.getElementById('questiontext5').innerHTML = "WHAT IS THE LCM OF 45 AND 95?"
+				}
+			</script>
+			<style>
+				#lcm{
+					position: absolute;
+					top: 1200px; right: 0px;
+					border: 7px solid black;
+					font-size: 23px;
+					width: 45%;
+				}
+			</style>
+		</div>
+		<style>
+			body{
+				background-image: url('math.jpeg');
+			}
+			#bg-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+		</style>
+		<div>
+			<video autoplay muted loop id="bg-video">
+				<source src="video4.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			  </video>
+			</div>
+	</body>
+</html>

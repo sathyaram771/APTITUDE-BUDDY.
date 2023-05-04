@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>INTREST CALCULATION</title>
+	<link rel="stylesheet".href="https://pyscript.net/alpha/pyscript.css"./>
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+	<div style="background-image: url('l.jpeg');height: 90px;">
+	<h1 style="color: black;">INTREST CALCULATIONS</h1>
+	<form action="index.html">
+		<input id="homebutton" style="background-image:url('l.jpeg');font-size: 23px;" type="submit" value="HOME">
+	</form>
+	<form action  = "content.html">
+		<input id="contentbutton" style="background-image:url('l.jpeg');font-size:23px" type="submit" value="CONTENT">
+	</form>
+	</div>
+	<div id="simpleintrest" style="background-color: purple;">
+		<h2>SIMPLE INTREST</h2>
+		<form onsubmit="return false">
+			<label for="number1">ENTER PRINCIPAL</label><br>
+			<input type="number" id="number1" name="number1" min="0" value="number1"/><br>
+			<label for="number2">ENTER RATE OF INTREST</label><br>
+			<input type="number" id="number2" name="number2" min="0" step="0.01" value="number2"/><br>
+			<label for="number3">ENTER NO OF YEARS</label><br>
+			<input type="number" id="number3" step="0.01" name="number3" min="0" value="number3"/><br>
+			<input pys-onClick="sub1" type="submit" id="btn-form1" value="submit">
+		</form>
+		<p>OUTPUT:</p>
+		<p id="outputtext1"></p>
+		<p id="output1"></p>
+		<py-script>
+			def sub1(*args,**kwargs):
+				result1 = Element('output1')
+				textresult1 = Element('outputtext1')
+				textresult1.write("THE ANSWER IS:")
+				A = Element('number1').value
+				B = Element('number2').value
+				C = Element('number3').value
+				result1.write((float(A)*float(B)*float(C))/100)
+		</py-script>
+		<style>
+			#simpleintrest{
+				position: absolute;
+				top:200px; right: 0px;
+				font-size: 23px;
+				color: black;
+				border: 7px solid black;
+				width: 48%;
+			}
+			body{
+				background-image: url('image.jpeg');
+			}
+			#homebutton{
+				position: absolute;
+				top: 80px ;left:15px ;
+			}
+			#contentbutton{
+				position: absolute;
+				top:80px ;left: 100px;
+			}
+		</style>
+	</div>
+	<div id="compoundintrest" style="background-color:darkgrey;">
+		<h2>COMPOUND INTREST</h2>
+		<form onsubmit="return false">
+			<label for="number4">ENTER PRINCIPAL</label><br>
+			<input type="number" id="number4" name="number4" min="0" value="number4"/><br>
+			<label for="number5">ENTER RATE OF INTREST</label><br>
+			<input type="number" id="number5" name="number5" min="0" step="0.01" value="number5"/><br>
+			<label for="number6">ENTER NO OF YEARS</label><br>
+			<input type="number" id="number6" step="0.01" name="number6" min="0" value="number6"/><br>
+			<label for="number7">ENTER INTERVAL OF COMPOUNDING</label><br>
+			<input type="number" id="number7" name="number7" min="1" value="number7">
+			<input pys-onClick="sub2" type="submit" id="btn-form2" value="submit">
+		</form>
+	<p>OUTPUT:</p>
+	<p id="outputtext2"></p>
+	<p id='output2'></p>
+	<py-script>
+		def sub2(*args,**kwargs):
+			result2 = Element('output2')
+			textresult2 = Element('outputtext2')
+			textresult2.write("THE ANSWER IS:")
+			D = Element('number4').value
+			E = Element('number5').value
+			F = Element('number6').value
+			G = Element('number7').value
+			P = 1+(float(E)/(int(G)*100))
+			Q = int(G)*float(F)
+			result2.write(int(D)-(int(D)*P**Q))
+			
+	</py-script>
+	<style>
+		#compoundintrest{
+			position: absolute;
+			top: 200px; left: 0px;
+			font-size: 23px;
+			color: red;
+			border: 7px solid black;
+			width: 48%;
+		}
+		#bg-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+	</style>
+	</div>
+	<div>
+		<video autoplay muted loop id="bg-video">
+			<source src="video6.mp4" type="video/mp4">
+			Your browser does not support HTML5 video.
+		  </video>
+		</div>
+</body>
+</html>

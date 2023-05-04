@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CONTACT INFO</title>
+    </head>
+    <body>
+        <img id="myphoto" src="WhatsApp Image 2023-04-20 at 11.04.10.jpg">
+        <h1 style="color: white;font-size: 30px;">ABOUT</h1>
+        <p style="color: white;font-size: 25px;">IAM SATHYARAM PERSUING MY UNDER GRADUATE PROGRAM IN COMPUTER SCIENCE AND BUISNESS SYSTEMS IN THE CHENNAI INSTITUTE OF TECHNOLOGY
+           ,CHENNAI,TAMIL NADU,INDIA
+        </p>
+        <h2 style="color: whitesmoke;">CONTACT DETAILS:</h2>
+        <table style="border: 10px solid silver;color: white;" >
+            <tr>
+                <td style="border: 5px solid silver;">INSTAGRAM:</td>
+                <td style="border: 5px solid silver;"><a href="https://www.instagram.com/" style="color: aliceblue;">CLICK HERE</a></td>
+            </tr>
+            <tr>
+                <td style="border: 5px solid silver;">MOBILE NUMBER:</td>
+                <td style="border: 5px solid silver;"><a href="tel:91+9003560430" style="color: aliceblue;">CLICK HERE</a></td>
+            </tr>
+            <tr>
+                <td style="border: 5px solid silver;">MAIL ID:</td>
+                <td style="border: 5px solid silver;"><a href="mailto:sathyaalh3@gmail.com" style="color: aliceblue;">CLICK HERE</a></td>
+            </tr>
+            <tr>
+                <td style="border: 5px solid silver;">LINKEDIN:</td>
+                <td style="border: 5px solid silver;"><a href="https://www.linkedin.com/in/sathyaram-p-90962425b" style="color: aliceblue;">CLICK HERE</a></td>
+            </tr>
+        </table>
+        <div>
+        <video autoplay muted loop id="bg-video">
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <button id="homebutton" onclick="redirectToPage('index.html')">HOME</button>
+        <button id="contentbutton" onclick="redirectToPage('content.html')">CONTENT</button>
+        <style>
+            #myphoto{
+                border: 7px solid black;
+            }
+            #bg-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+            #homebutton{
+                position: absolute;
+                right: 10px;
+                top: 0px;
+                background-image: url('image2.jpeg');
+                font-size: 30px;
+                color: aliceblue;
+            }
+            #contentbutton{
+                position: absolute;
+                right: 10px;
+                top: 50px;
+                background-image: url('image2.jpeg');
+                font-size: 30px;
+                color: aliceblue;
+            }
+
+        </style>
+        <script>
+            function redirectToPage(X) {
+            location.href = X;
+            }
+        </script>
+    </body>
+</html>

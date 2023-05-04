@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME PAGE</title>
+    </head>
+    <body>
+        <img id="iconimage" src="icons8-tesseract-100.png">
+        <h1 id="mainheading" style="color: white;">APTITUDE BUDDY <sub>-MATH LOVE!</sub></h1>
+        <div id="maindiv">
+            <button class="maindivbutton" id="b1" onclick="redirectToPage('content.html')">CONTENT</button>
+            <button class="maindivbutton" id="b2" onclick="redirectToPage('contact.html')">ABOUT</button>
+            <button class="maindivbutton" id="b3" onclick="redirectToPage('test.html')">TAKE TEST</button>
+        </div>
+        <div>
+            <video autoplay muted loop id="bg-video">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+        </div>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+            #mainheading{
+                position: absolute;
+                top: 0px; left: 110px;
+                font-size: 75px;
+                font-family: 'Sigmar', cursive;
+                margin-top: 0px;
+            }
+            #iconimage{
+                position: absolute;
+                top: 15px; left: 0px;
+                height: 100px; width: 100px;
+
+            }
+            #maindiv{
+                position: relative;
+                 top: 150px;
+                background-color: lightblue;
+                height: 50px;
+                border: 5px solid black;
+            }
+            .maindivbutton{
+                background-color: lightblue;
+                height: 50px;
+                width: 200px;
+                border: 2px solid black;
+                font-family: 'Lobster',cursive;
+                font-size: 30px;
+            }
+            #bg-video{
+                position: absolute;
+                z-index: -1;
+                top: 0px;
+            }
+        </style>
+        <script>
+            function redirectToPage(X) {
+            location.href = X;
+            }
+        </script>
+    </body>
+</html>
